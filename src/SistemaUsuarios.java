@@ -30,13 +30,18 @@ public class SistemaUsuarios {
         System.out.println("Ingrese el nombre de usuario: ");
         String usuario = teclado.nextLine();
 
+        if (!usuarios.containsKey(usuario)) {
+            System.out.println("ERROR: Usuario no encontrado.");
+            return;
+        }
+
         System.out.println("Ingrese su contraseña: ");
         String contraseña = teclado.nextLine();
 
         if (usuarios.get(usuario).equals(contraseña)){
-            System.out.println("Acceso concedido. Bienvenido "+usuario+"!.");
+            System.out.println("Acceso concedido. Bienvenido "+usuario+"!");
         }else{
-            System.out.println("ERROR: Usuario no encontrado o contraseña incorrecta.");
+            System.out.println("ERROR: Contraseña incorrecta.");
         }
     }
 
