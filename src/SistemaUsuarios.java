@@ -40,31 +40,38 @@ public class SistemaUsuarios {
         }
     }
 
-    public static void main(String[] args) {
-        int opcion;
-        System.out.println("MENÚ DEL SISTEMA");
-        System.out.println("1. Registrar usuario.");
-        System.out.println("2. Iniciar Sesion.");
-        System.out.println("3. Salir.");
-        System.out.println("Seleccione una opción.");
+    public static void iniciarSistema(){
+        int opcion = 0;
 
-        opcion =  teclado.nextInt();
+        while (opcion != 3) {
+            System.out.println("===== MENÚ DEL SISTEMA =====");
+            System.out.println("1. Registrar usuario.");
+            System.out.println("2. Iniciar Sesion.");
+            System.out.println("3. Salir.");
+            System.out.println("Seleccione una opción.");
 
-        switch (opcion){
-            case 1:
-                registrarUsuario();
-                break;
-            case 2:
-                iniciarSesion();
-                break;
+            opcion = teclado.nextInt();
+
+            teclado.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    registrarUsuario();
+                    break;
+                case 2:
+                    iniciarSesion();
+                    break;
                 case 3:
                     System.out.printf("Saliendo del sistema.");
                     System.exit(0);
-            default:
-                System.out.println("Opción inválida.");
+                default:
+                    System.out.println("Opción inválida.");
+            }
         }
-
-
     }
 
+    public static void main(String[] args){
+        System.out.println("Ejecutando sistema...");
+        iniciarSistema();
+    }
 }
